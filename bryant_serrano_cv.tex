@@ -1,0 +1,88 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.62in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\definecolor{accent}{HTML}{155E75}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.15em, itemsep=1pt, topsep=2pt, parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\role}[3]{\textbf{#1} \hfill #3\\\textit{#2}\par}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Bryant Ricardo Serrano Sánchez}
+
+{\large Software Engineer}\\[4pt]
+
+
+Mexico $\cdot$ \href{mailto:bryantser96@gmail.com}{bryantser96@gmail.com} $\cdot$
+\href{https://github.com/bryantserrano}{github.com/bryantserrano}
+
+\end{center}
+\vspace{-6pt}
+
+
+\section*{Summary}
+Software Engineer with a networking background and 6+ years in tech, including 2+ years building backend services, AI applications, and user interfaces. Experienced with Python, FastAPI, Node.js, React, OpenAI, cloud services, the software development lifecycle, and communication with people.
+
+\section*{Experience}
+\role{Cisco}{Software Engineer}{March 2026 -- Present}
+\begin{itemize}
+  \item Develop internal integration dashboards with React and TypeScript, using TanStack Query, React Router, and Okta OIDC authentication.
+  \item Build Node.js and Express.js services integrating MuleSoft, Splunk, and internal metadata APIs, with PostgreSQL and OpenSearch for ETL monitoring, event tracking, and platform health reporting.
+  \item Create Splunk searches, dashboards, and alerts to monitor integration traffic, identify failures, and investigate transaction activity.
+  \item Develop a Webex-based AI assistant using Deep Agents for internal workflows.
+\end{itemize}
+
+\role{Cisco}{Escalation Engineer, Cisco TAC}{January 2024 -- March 2026}
+\begin{itemize}
+  \item Developed internal applications and Webex bots for campaigns, events, and Customer Experience Center initiatives.
+  \item Automated recurring workflows to reduce manual effort and support team productivity; managed critical technical escalations and delivered technology training.
+\end{itemize}
+
+\role{Cisco}{Technical Consulting Engineer, Cisco TAC}{October 2020 -- December 2023}
+\begin{itemize}
+  \item Troubleshot Enterprise routers (IOS-XE), debugged software using core files, and supported virtual router deployments across NFVIS, VMware, AWS, Azure, and GCP.
+  \item Worked with RESTCONF, NETCONF, telemetry, and Smart Licensing technologies.
+\end{itemize}
+
+\role{Netcontroll}{Help Desk}{February 2020 -- October 2020}
+\begin{itemize}
+  \item Provided technical assistance, network traffic analysis, and customer support for Palo Alto Networks NGFW products.
+  \item Coordinated complex issues with Palo Alto TAC and wrote Python scripts to automate reporting alerts.
+\end{itemize}
+
+\role{Bank of Mexico}{Intern, Information Security Office of Applications}{June 2019 -- December 2019}
+\begin{itemize}
+  \item Contributed to application security by implementing a DLP system and wrote Python automation to improve operational efficiency.
+\end{itemize}
+
+\section*{Skills}
+\textbf{AI \& Automation:} OpenAI API, AI Agents, MCP, Agent Skills, Make, n8n\\
+\textbf{Backend:} Python, FastAPI, Node.js, Express.js, JavaScript, Java, C, REST APIs, JWT, OAuth 2.0, LDAP\\
+\textbf{Frontend:} React, TypeScript, SvelteKit, Skeleton UI, HTML5, CSS3\\
+\textbf{Data:} PostgreSQL, MongoDB, OpenSearch\\
+\textbf{Cloud \& DevOps:} AWS, Azure, GCP, Docker, Kubernetes, Ansible, CI/CD, Git, GitHub, Splunk\\
+\textbf{Testing \& Networking:} pytest, Postman, Bruno, Cisco IOS XE, enterprise routing, NETCONF, RESTCONF, network telemetry
+
+\section*{Education \& Certifications}
+\textbf{National Autonomous University of Mexico (UNAM)} --- Computer Engineering, GPA 9.11/10 \hfill August 2015 -- June 2020\\
+AWS Certified Cloud Practitioner (Amazon), July 2023 -- January 2029 $\cdot$ Salesforce Certified Platform Foundations, August 2026
+
+\section*{Languages}
+English (Native) $\cdot$ Spanish (Advanced)
+
+\end{document}
