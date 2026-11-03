@@ -51,7 +51,7 @@ The `.tex` extension in `"%DOC%.tex"` is required because LaTeX Workshop's `%DOC
 
 ## Deploy
 
-The site is configured for GitHub Pages at `https://<username>.github.io/bryant-serrano-portfolio/`. Build with `npm run build` and publish the generated `dist/` directory using GitHub Pages, or connect the repository to another static hosting service such as Netlify, Vercel, or Cloudflare Pages. For a root domain, update the `base` setting in `vite.config.ts` to `/` for the deployment build.
+The workflow in `.github/workflows/deploy.yml` builds the site and deploys it to GitHub Pages whenever changes are pushed to `main`. In the repository's **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**. The portfolio will be available at `https://bryantserrano.github.io/bryant-serrano-portfolio/` after the first successful workflow run. The Vite base path is already set for this project URL.
 
 ## Update content
 
