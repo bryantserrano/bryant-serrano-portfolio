@@ -10,7 +10,7 @@ export const resume = {
   email: 'bryantser96@gmail.com',
   linkedin: '',
   github: 'https://github.com/bryantserrano',
-  cvUrl: '/bryant_serrano_cv.pdf',
+  cvUrl: './bryant_serrano_cv.pdf',
   skills: [
     { category: 'AI engineering & automation', skills: ['OpenAI API', 'AI Agents', 'MCP', 'Agent Skills', 'Make', 'n8n'] },
     { category: 'Backend & APIs', skills: ['Python', 'FastAPI', 'Node.js', 'Express.js', 'JavaScript', 'Java', 'C', 'REST APIs', 'JWT', 'OAuth 2.0', 'LDAP'] },
