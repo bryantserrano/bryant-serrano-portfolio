@@ -1,23 +1,36 @@
 import { useEffect, useState } from 'react'
-import { ArrowDown, ArrowUp, ArrowUpRight, Award, Download, Github, Linkedin, Mail, MapPin, Menu, X } from 'lucide-react'
+import { ArrowDown, ArrowUp, ArrowUpRight, Award, Download, Github, Linkedin, Mail, MapPin, Menu, Moon, Sun, X } from 'lucide-react'
 import { resume } from './data/resume'
+
+type Theme = 'light' | 'dark'
+
+function getInitialTheme(): Theme {
+  const savedTheme = window.localStorage.getItem('theme')
+  if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
 
 const navItems = [
   ['About', '#about'], ['Skills', '#skills'], ['Experience', '#experience'],
   ['Education', '#education'], ['Contact', '#contact'],
 ]
 
-function Header() {
+function Header({ theme, onToggleTheme }: { theme: Theme; onToggleTheme: () => void }) {
   const [open, setOpen] = useState(false)
   return <header className="site-header">
     <a className="wordmark" href="#about" onClick={() => setOpen(false)} aria-label="Bryant Serrano, home">Bryant Serrano</a>
-    <button className="menu-toggle" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} onClick={() => setOpen(!open)}>
-      {open ? <X size={20} /> : <Menu size={20} />}
-    </button>
     <nav className={open ? 'navigation is-open' : 'navigation'} aria-label="Main navigation">
       {navItems.map(([name, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{name}</a>)}
       <a className="nav-contact" href="#contact" onClick={() => setOpen(false)}>Get in touch <ArrowUpRight size={14} /></a>
     </nav>
+    <div className="header-actions">
+      <button className="theme-toggle" onClick={onToggleTheme} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} aria-pressed={theme === 'dark'} title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>
+        {theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}
+      </button>
+      <button className="menu-toggle" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} onClick={() => setOpen(!open)}>
+        {open ? <X size={20} /> : <Menu size={20} />}
+      </button>
+    </div>
   </header>
 }
 
@@ -137,5 +150,13 @@ function BackToTop() {
 }
 
 export default function App() {
-  return <><Header /><main><Hero /><Skills /><Experience /><EducationAndMore /></main><Contact /><BackToTop /></>
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#111a22' : '#f7f8f8')
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
+  return <><Header theme={theme} onToggleTheme={() => setTheme((current) => current === 'light' ? 'dark' : 'light')} /><main><Hero /><Skills /><Experience /><EducationAndMore /></main><Contact /><BackToTop /></>
 }
