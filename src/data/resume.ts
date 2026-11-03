@@ -8,7 +8,7 @@ export const resume = {
     'Software Engineer with a networking background and 6+ years in tech, including 2+ years building backend services, AI applications, and user interfaces. Experienced with Python, FastAPI, Node.js, React, OpenAI, cloud services, the software development lifecycle, and communication with people.',
   location: 'Mexico',
   email: 'bryantser96@gmail.com',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/bryant-serrano-658166189',
   github: 'https://github.com/bryantserrano',
   cvUrl: './bryant_serrano_cv.pdf',
   skills: [
