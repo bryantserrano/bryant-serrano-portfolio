@@ -128,9 +128,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .back-to-top { right: 20px; bottom: 20px; }
   .site-header { min-height: 68px; }
   .menu-toggle { display: inline-flex; }
-  .navigation { display: none; position: absolute; z-index: 4; top: 68px; left: 0; right: 0; padding: 18px 20px 22px; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 17px; }
+  .navigation { display: none; position: absolute; z-index: 4; top: 68px; left: 0; right: 0; padding: 14px 20px 20px; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; align-items: center; gap: 4px; text-align: center; }
   .navigation.is-open { display: flex; }
-  .navigation .nav-contact { margin: 0; }
+  .navigation > a { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 0 12px; border-radius: 6px; cursor: pointer; transition: background-color .18s ease, color .18s ease; }
+  .navigation > a:hover { background: var(--surface); }
+  .navigation .nav-contact { justify-content: center; margin: 8px 0 0; }
   .hero { padding-top: 32px; }
   .hero-content { grid-template-columns: 1fr; gap: 28px; padding: 65px 0 44px; }
   .hero-aside { max-width: 480px; }
